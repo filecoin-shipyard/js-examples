@@ -93,7 +93,7 @@ function CreateMeme(props) {
           fileReader.onload = async function () {
             arrayBuffer = this.result;
             uint8Array = new Uint8Array(arrayBuffer);
-            let addressArr = await window.web3.eth.getAccounts();
+            let addressArr = await window.ethereum.selectedAddress;
             registerMeme({
               address: addressArr[0],
               fileBuffer: uint8Array,
